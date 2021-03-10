@@ -1,8 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Product from './Component/Customer-module/Product'
-import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-  
+import Registration from './Component/Customer-module/Registration'
+import {withRouter,BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+ 
 
 import Login from './Component/Customer-module/Login'
 
@@ -13,12 +14,11 @@ function App() {
       {/* <Login />
       <Product /> */}
       <Switch>
-        <Route exact path="/login" >
-          <Login />
-        </Route>
-        <Route exact path="/product" >
-          <Product />
-        </Route>
+        <Route  exact path="/" component={Login} />
+        <Route  path="/login" component={Login} />
+        <Route  path="/regstrn" component={Registration} />
+        <Route path="/product" component={Product} />
+          
       </Switch>
 
     </div>
